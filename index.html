@@ -4,36 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revanth Varma | Data Analyst</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* General Styles */
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            color: #2c3e50; /* Updated font color */
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f171e; /* Prime Video dark background */
+            color: #ffffff; /* White text */
             margin: 0;
             padding: 0;
             line-height: 1.6;
         }
 
         header {
-            background-color: #4CAF50;
+            background: #0f171e; /* Prime Video header background */
             color: white;
             padding: 20px 0;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             font-size: 2.5rem;
             margin: 0;
+            font-weight: 600;
         }
 
         nav {
             display: flex;
             justify-content: center;
-            background-color: #333;
+            background-color: #1a242f; /* Darker blue for navigation */
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         nav a {
@@ -41,31 +48,39 @@
             padding: 14px 20px;
             text-decoration: none;
             text-align: center;
-            transition: background 0.3s ease;
+            transition: background 0.3s ease, transform 0.3s ease;
         }
 
         nav a:hover {
-            background-color: #575757;
+            background-color: #00a8e1; /* Prime Video blue on hover */
+            transform: translateY(-3px);
         }
 
         .container {
             padding: 20px;
-            max-width: 800px;
+            max-width: 1200px; /* Wider container for a cinematic feel */
             margin: 0 auto;
         }
 
         .section {
-            background-color: white;
+            background-color: #1a242f; /* Darker blue sections */
             margin: 20px 0;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .section h2 {
-            color: #4CAF50;
+            color: #00a8e1; /* Prime Video blue for headings */
             font-size: 2rem;
             margin-bottom: 20px;
+            font-weight: 600;
         }
 
         .profile-photo {
@@ -78,7 +93,12 @@
             width: 150px;
             height: 150px;
             object-fit: cover;
-            border: 5px solid #4CAF50;
+            border: 5px solid #00a8e1; /* Prime Video blue border */
+            transition: transform 0.3s ease;
+        }
+
+        .profile-photo img:hover {
+            transform: scale(1.1);
         }
 
         .social-links {
@@ -89,25 +109,34 @@
         .social-links a {
             margin: 0 10px;
             text-decoration: none;
-            color: #4CAF50;
+            color: #00a8e1; /* Prime Video blue for icons */
             font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
         .social-links a:hover {
-            color: #45a049;
+            color: #0077b6; /* Darker blue on hover */
+            transform: translateY(-3px);
         }
 
         .project, .certification, .experience, .education {
             margin: 20px 0;
             padding: 20px;
-            background-color: #e9f5e9;
+            background-color: #22303c; /* Darker blue for cards */
             border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project:hover, .certification:hover, .experience:hover, .education:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .project h3, .certification h3, .experience h3, .education h3 {
-            color: #2c3e50; /* Updated font color */
+            color: #ffffff; /* White text for card titles */
             font-size: 1.5rem;
             margin-bottom: 10px;
+            font-weight: 600;
         }
 
         .contact-form {
@@ -118,25 +147,30 @@
         .contact-form input, .contact-form textarea {
             margin: 10px 0;
             padding: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid #444; /* Dark gray border */
             border-radius: 4px;
+            background-color: #22303c; /* Darker blue background */
+            color: #ffffff; /* White text */
+            transition: border-color 0.3s ease;
         }
 
         .contact-form input:focus, .contact-form textarea:focus {
-            border-color: #4CAF50;
+            border-color: #00a8e1; /* Prime Video blue on focus */
         }
 
         .contact-form button {
-            background-color: #4CAF50;
+            background-color: #00a8e1; /* Prime Video blue button */
             color: white;
             padding: 10px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
         }
 
         .contact-form button:hover {
-            background-color: #45a049;
+            background-color: #0077b6; /* Darker blue on hover */
+            transform: translateY(-3px);
         }
 
         .contact-info {
@@ -147,6 +181,137 @@
         .contact-info p {
             margin: 5px 0;
             font-size: 1.1rem;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #00a8e1; /* Prime Video blue */
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background-color: #0077b6; /* Darker blue on hover */
+            transform: translateY(-3px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            font-weight: 600;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Grid Layout for Projects */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: #22303c;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-card h3 {
+            padding: 15px;
+            margin: 0;
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+
+        .project-card p {
+            padding: 0 15px 15px;
+            margin: 0;
+            color: #cccccc;
+        }
+
+        /* Animated Icons */
+        .animated-icon {
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a242f;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #00a8e1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #0077b6;
         }
     </style>
 </head>
@@ -163,6 +328,16 @@
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
     </nav>
+    <div class="hero">
+        <video autoplay muted loop>
+            <source src="img/hero-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div>
+            <h1>Welcome to My Portfolio</h1>
+            <p>Data Analyst | Predictive Modeling | Data Visualization</p>
+        </div>
+    </div>
     <div class="container">
         <section id="home" class="section">
             <h2>Home</h2>
@@ -171,8 +346,8 @@
             </div>
             <p>Welcome to my portfolio! I am a data analyst with expertise in predictive modeling, data visualization, and process automation. Explore my work and get in touch with me.</p>
             <div class="social-links">
-                <a href="https://github.com/Revanth-Varma-25" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/revanth-varma-/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/Revanth-Varma-25" target="_blank"><i class="fab fa-github animated-icon"></i></a>
+                <a href="https://www.linkedin.com/in/revanth-varma-/" target="_blank"><i class="fab fa-linkedin animated-icon"></i></a>
             </div>
         </section>
         <section id="about" class="section">
@@ -181,41 +356,22 @@
         </section>
         <section id="projects" class="section">
             <h2>Projects</h2>
-            <div class="project">
-                <h3>Project 1: Data Analytics in Retail Performance</h3>
-                <p><strong>Overview:</strong> Analyzed Walmart and Target’s retail performance, focusing on financial metrics and COVID-19’s impact on consumer behavior.</p>
-                <p><strong>Key Responsibilities:</strong></p>
-                <ul>
-                    <li>Collected and cleaned data from SEC EDGAR filings.</li>
-                    <li>Built regression models in Python to forecast sales and revenue.</li>
-                    <li>Conducted time series analysis to predict future performance.</li>
-                    <li>Developed interactive dashboards in Power BI and Tableau.</li>
-                </ul>
-                <p><strong>Tools Used:</strong> Python (Pandas, NumPy, Scikit-learn), Power BI, Tableau, SQL, Time Series Analysis, Regression Modeling.</p>
-            </div>
-            <div class="project">
-                <h3>Project 2: IRIS Classification</h3>
-                <p><strong>Overview:</strong> Implemented a machine learning model to classify iris flowers into three species using the Iris dataset.</p>
-                <p><strong>Key Responsibilities:</strong></p>
-                <ul>
-                    <li>Performed data cleaning, exploratory data analysis (EDA), and feature selection.</li>
-                    <li>Built and evaluated classification models using Logistic Regression, KNN, Decision Trees, and Random Forest.</li>
-                    <li>Optimized model performance through hyperparameter tuning and cross-validation.</li>
-                    <li>Visualized results using Matplotlib and Seaborn.</li>
-                </ul>
-                <p><strong>Tools & Technologies:</strong> Python (Pandas, Scikit-learn, Matplotlib, Seaborn), Jupyter Notebook.</p>
-            </div>
-            <div class="project">
-                <h3>Project 3: Global Super Mart Amazon 2012-2015 (Power BI Dashboard)</h3>
-                <p><strong>Overview:</strong> Developed an interactive Power BI dashboard to analyze sales performance, customer behavior, and product trends.</p>
-                <p><strong>Key Responsibilities:</strong></p>
-                <ul>
-                    <li>Cleaned and transformed raw sales data for accurate reporting.</li>
-                    <li>Designed interactive dashboards with KPI cards, geographic analysis, and trend charts.</li>
-                    <li>Performed advanced DAX calculations for insights like year-over-year growth and profit margins.</li>
-                    <li>Enhanced user experience with drill-through filters and dynamic visualizations.</li>
-                </ul>
-                <p><strong>Tools & Technologies:</strong> Power BI, DAX, SQL, Excel.</p>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="img/project1.jpg" alt="Project 1">
+                    <h3>Data Analytics in Retail Performance</h3>
+                    <p>Analyzed Walmart and Target’s retail performance, focusing on financial metrics and COVID-19’s impact on consumer behavior.</p>
+                </div>
+                <div class="project-card">
+                    <img src="img/project2.jpg" alt="Project 2">
+                    <h3>IRIS Classification</h3>
+                    <p>Implemented a machine learning model to classify iris flowers into three species using the Iris dataset.</p>
+                </div>
+                <div class="project-card">
+                    <img src="img/project3.jpg" alt="Project 3">
+                    <h3>Global Super Mart Amazon 2012-2015 (Power BI Dashboard)</h3>
+                    <p>Developed an interactive Power BI dashboard to analyze sales performance, customer behavior, and product trends.</p>
+                </div>
             </div>
         </section>
         <section id="certifications" class="section">
@@ -241,7 +397,6 @@
                 </ul>
             </div>
         </section>
-        <!-- Professional Experience Section -->
         <section id="experience" class="section">
             <h2>Professional Experience</h2>
             <div class="experience">
@@ -267,7 +422,6 @@
                 </ul>
             </div>
         </section>
-        <!-- Education Section -->
         <section id="education" class="section">
             <h2>Education</h2>
             <div class="education">
@@ -290,5 +444,11 @@
             </form>
         </section>
     </div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Revanth Varma. All rights reserved. | <a href="#home">Back to Top</a></p>
+    </footer>
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top">↑</a>
 </body>
 </html>
