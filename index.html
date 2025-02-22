@@ -275,6 +275,18 @@
             color: #cccccc;
         }
 
+        .project-card a {
+            display: inline-block;
+            margin: 10px 0;
+            color: #00a8e1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .project-card a:hover {
+            color: #0077b6;
+        }
+
         /* Animated Icons */
         .animated-icon {
             display: inline-block;
@@ -407,6 +419,83 @@
         .accomplishment ul li i {
             margin-right: 10px;
             color: #00a8e1;
+        }
+
+        /* Responsive Design for Phones */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem; /* Smaller header text */
+            }
+
+            nav a {
+                padding: 10px 15px; /* Smaller padding for nav links */
+                font-size: 0.9rem; /* Smaller font size for nav links */
+            }
+
+            .hero h1 {
+                font-size: 2.5rem; /* Smaller hero text */
+            }
+
+            .hero p {
+                font-size: 1.2rem; /* Smaller hero subtitle */
+            }
+
+            .profile-photo img {
+                width: 120px; /* Smaller profile photo */
+                height: 120px;
+            }
+
+            .section h2 {
+                font-size: 1.8rem; /* Smaller section headings */
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr; /* Single column for projects */
+            }
+
+            .project-card img {
+                height: 150px; /* Smaller project images */
+            }
+
+            .project-card h3 {
+                font-size: 1.3rem; /* Smaller project titles */
+            }
+
+            .project-card p {
+                font-size: 0.9rem; /* Smaller project descriptions */
+            }
+
+            .skill-card h3 {
+                font-size: 1.3rem; /* Smaller skill card titles */
+            }
+
+            .skill-card ul li {
+                font-size: 0.9rem; /* Smaller skill card text */
+            }
+
+            .accomplishment h3 {
+                font-size: 1.3rem; /* Smaller accomplishment titles */
+            }
+
+            .accomplishment ul li {
+                font-size: 0.9rem; /* Smaller accomplishment text */
+            }
+
+            .contact-form input, .contact-form textarea {
+                font-size: 0.9rem; /* Smaller form text */
+            }
+
+            .contact-form button {
+                font-size: 0.9rem; /* Smaller button text */
+            }
+
+            .contact-info p {
+                font-size: 1rem; /* Smaller contact info text */
+            }
+
+            footer p {
+                font-size: 0.9rem; /* Smaller footer text */
+            }
         }
     </style>
 </head>
@@ -563,19 +652,21 @@
             <h2>Projects</h2>
             <div class="project-grid">
                 <div class="project-card">
-                    <img src="img/project1.jpg" alt="Project 1">
+                    <img src="img/Walmart vs Target Project 1.jpg" alt="Data Analytics in Retail Performance">
                     <h3>Data Analytics in Retail Performance</h3>
                     <p>Analyzed Walmart and Target’s retail performance, focusing on financial metrics and COVID-19’s impact on consumer behavior.</p>
                 </div>
                 <div class="project-card">
-                    <img src="img/project2.jpg" alt="Project 2">
+                    <img src="img/Project 2.jpg" alt="IRIS Classification">
                     <h3>IRIS Classification</h3>
                     <p>Implemented a machine learning model to classify iris flowers into three species using the Iris dataset.</p>
+                    <a href="https://github.com/Revanth-Varma-25/Iris-Classification" target="_blank">View Project on GitHub</a>
                 </div>
                 <div class="project-card">
-                    <img src="img/project3.jpg" alt="Project 3">
+                    <img src="img/Amazon Project 3.jpg" alt="Global Super Mart Amazon 2012-2015 (Power BI Dashboard)">
                     <h3>Global Super Mart Amazon 2012-2015 (Power BI Dashboard)</h3>
                     <p>Developed an interactive Power BI dashboard to analyze sales performance, customer behavior, and product trends.</p>
+                    <a href="https://github.com/Revanth-Varma-25/Global-Super-Mart-Amazon-2012-2015" target="_blank">View Project on GitHub</a>
                 </div>
             </div>
         </section>
