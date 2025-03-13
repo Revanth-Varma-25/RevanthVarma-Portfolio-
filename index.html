@@ -3,169 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Revanth Varma - Data Analyst Portfolio. Specializing in predictive modeling, data visualization, and business intelligence with expertise in Tableau, Power BI, SQL, and Python.">
-    <meta name="keywords" content="data analyst, portfolio, predictive modeling, data visualization, business intelligence, Tableau, Power BI, SQL, Python, Revanth Varma">
-    <meta name="author" content="Revanth Varma">
-    <title>Revanth Varma | Data Analyst Portfolio</title>
-    <!-- Google Fonts (Inter) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>Revanth Varma | Data Analyst</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Typed.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-    <!-- Favicon -->
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <style>
-        * {
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f171e; /* Prime Video dark background */
+            color: #ffffff; /* White text */
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #141414;
-            color: #ffffff;
             line-height: 1.6;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-
-        /* Preloader */
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #141414;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-
-        #preloader .spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid #E50914;
-            border-top: 5px solid transparent;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
 
         header {
-            background: #1a1a1a;
-            padding: 15px 0;
+            background: #0f171e; /* Prime Video header background */
+            color: white;
+            padding: 20px 0;
             text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
-            font-size: 2rem;
-            font-weight: 700;
+            font-size: 2.5rem;
+            margin: 0;
+            font-weight: 600;
         }
 
         nav {
             display: flex;
             justify-content: center;
-            background-color: #1a1a1a;
+            background-color: #1a242f; /* Darker blue for navigation */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .nav-toggle {
-            display: none;
-            font-size: 1.5rem;
-            background: none;
-            border: none;
-            color: #E50914;
-            cursor: pointer;
-            padding: 15px;
-        }
-
-        .nav-menu {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            width: 100%;
-            transition: transform 0.3s ease;
-        }
-
-        .nav-menu a {
+        nav a {
             color: white;
-            padding: 15px 20px;
+            padding: 14px 20px;
             text-decoration: none;
-            transition: background 0.3s ease, color 0.3s ease;
+            text-align: center;
+            transition: background 0.3s ease, transform 0.3s ease;
         }
 
-        .nav-menu a:hover, .nav-menu a.active {
-            background-color: #E50914;
-            color: white;
+        nav a:hover {
+            background-color: #00a8e1; /* Prime Video blue on hover */
+            transform: translateY(-3px);
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
             padding: 20px;
+            max-width: 1200px; /* Wider container for a cinematic feel */
+            margin: 0 auto;
         }
 
         .section {
-            background: #1a1a1a;
+            background-color: #1a242f; /* Darker blue sections */
             margin: 20px 0;
             padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            animation: fadeIn 0.5s ease-in-out;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .section h2 {
-            color: #E50914;
+            color: #00a8e1; /* Prime Video blue for headings */
             font-size: 2rem;
             margin-bottom: 20px;
+            font-weight: 600;
         }
 
-        .hero {
-            height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .profile-photo {
             text-align: center;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('img/hero-background.jpg') center/cover no-repeat;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8);
-        }
-
-        .hero .typed-text {
-            font-size: 1.5rem;
-            color: #E50914;
-            margin-top: 10px;
-        }
-
-        .hero .btn {
-            margin-top: 20px;
-            background: #E50914;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: background 0.3s ease;
-        }
-
-        .hero .btn:hover {
-            background: #B20710;
+            margin: 20px 0;
         }
 
         .profile-photo img {
@@ -173,9 +93,7 @@
             width: 150px;
             height: 150px;
             object-fit: cover;
-            border: 4px solid #E50914;
-            display: block;
-            margin: 20px auto;
+            border: 5px solid #00a8e1; /* Prime Video blue border */
             transition: transform 0.3s ease;
         }
 
@@ -183,321 +101,441 @@
             transform: scale(1.1);
         }
 
+        .social-links {
+            text-align: center;
+            margin: 20px 0;
+        }
+
         .social-links a {
-            margin: 0 15px;
-            color: #E50914;
+            margin: 0 10px;
+            text-decoration: none;
+            color: #00a8e1; /* Prime Video blue for icons */
             font-size: 1.5rem;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
         .social-links a:hover {
-            color: #B20710;
+            color: #0077b6; /* Darker blue on hover */
+            transform: translateY(-3px);
         }
 
-        /* Projects Section */
-        .project-grid {
+        .project, .certification, .experience, .education {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #22303c; /* Darker blue for cards */
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project:hover, .certification:hover, .experience:hover, .education:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .project h3, .certification h3, .experience h3, .education h3 {
+            color: #ffffff; /* White text for card titles */
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .contact-form {
             display: flex;
-            overflow-x: auto;
-            gap: 20px;
-            padding: 10px 0;
-            scrollbar-width: thin;
-            scrollbar-color: #E50914 #1a1a1a;
+            flex-direction: column;
         }
 
-        .project-grid.grid-view {
+        .contact-form input, .contact-form textarea {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #444; /* Dark gray border */
+            border-radius: 4px;
+            background-color: #22303c; /* Darker blue background */
+            color: #ffffff; /* White text */
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #00a8e1; /* Prime Video blue on focus */
+        }
+
+        .contact-form button {
+            background-color: #00a8e1; /* Prime Video blue button */
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #0077b6; /* Darker blue on hover */
+            transform: translateY(-3px);
+        }
+
+        .contact-info {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            font-size: 1.1rem;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #00a8e1; /* Prime Video blue */
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background-color: #0077b6; /* Darker blue on hover */
+            transform: translateY(-3px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            font-weight: 600;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Grid Layout for Projects */
+        .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            overflow-x: hidden;
-        }
-
-        .project-grid::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        .project-grid::-webkit-scrollbar-thumb {
-            background: #E50914;
-            border-radius: 4px;
+            gap: 20px;
         }
 
         .project-card {
-            flex: 0 0 300px;
-            background: #222222;
-            border-radius: 12px;
+            background-color: #22303c;
+            border-radius: 8px;
             overflow: hidden;
-            transition: transform 0.3s ease;
-            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .project-card:hover {
-            transform: scale(1.05);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .project-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            loading: lazy;
         }
 
         .project-card h3 {
             padding: 15px;
+            margin: 0;
             font-size: 1.5rem;
+            color: #ffffff;
         }
 
         .project-card p {
             padding: 0 15px 15px;
+            margin: 0;
             color: #cccccc;
-            font-size: 0.9rem;
         }
 
         .project-card a {
-            display: block;
-            padding: 0 15px 15px;
-            color: #E50914;
+            display: inline-block;
+            margin: 10px 0;
+            color: #00a8e1;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
 
         .project-card a:hover {
-            color: #B20710;
+            color: #0077b6;
         }
 
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
+        /* Animated Icons */
+        .animated-icon {
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
         }
 
-        .modal-content {
-            background: #222222;
-            padding: 20px;
-            border-radius: 12px;
-            max-width: 600px;
-            width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
-        .modal-content h3 {
-            color: #E50914;
-            font-size: 1.8rem;
+        /* Footer */
+        footer {
+            background-color: #1a242f;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
         }
 
-        .modal-content .close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 1.5rem;
-            color: #E50914;
-            cursor: pointer;
+        footer p {
+            margin: 0;
+            font-size: 1rem;
         }
 
-        .modal-content .close:hover {
-            color: #B20710;
+        footer a {
+            color: #00a8e1;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        /* Skills Section */
-        .skills-grid {
+        footer a:hover {
+            color: #0077b6;
+        }
+
+        /* New Styles for Skills & Tools and Accomplishments */
+        .skills-section {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
+            margin: 20px 0;
         }
 
         .skill-card {
-            background: #222222;
+            background-color: #22303c;
             padding: 20px;
-            border-radius: 12px;
-            transition: transform 0.3s ease;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .skill-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .skill-card h3 {
-            color: #E50914;
+            color: #00a8e1;
             font-size: 1.5rem;
             margin-bottom: 15px;
         }
 
         .skill-card ul {
             list-style: none;
+            padding: 0;
         }
 
         .skill-card ul li {
             margin: 10px 0;
             color: #cccccc;
+            font-size: 1rem;
+        }
+
+        .skill-card ul li i {
+            margin-right: 10px;
+            color: #00a8e1;
         }
 
         .progress-bar {
-            background: #1a1a1a;
-            border-radius: 6px;
-            height: 10px;
-            margin-top: 10px;
+            background-color: #1a242f;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 10px 0;
         }
 
         .progress {
-            background: #E50914;
-            height: 100%;
-            border-radius: 6px;
+            background-color: #00a8e1;
+            height: 10px;
+            border-radius: 4px;
+            transition: width 0.5s ease;
         }
 
-        /* Contact Form */
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #444;
-            border-radius: 6px;
-            background: #222222;
-            color: #ffffff;
+        .accomplishments-section {
+            margin: 20px 0;
         }
 
-        .contact-form button {
-            background: #E50914;
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .contact-form button:hover {
-            background: #B20710;
-        }
-
-        footer {
-            background: #1a1a1a;
-            text-align: center;
+        .accomplishment {
+            background-color: #22303c;
             padding: 20px;
-            margin-top: 40px;
+            border-radius: 8px;
+            margin: 20px 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        footer a {
-            color: #E50914;
-            text-decoration: none;
+        .accomplishment:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
-        footer a:hover {
-            color: #B20710;
+        .accomplishment h3 {
+            color: #00a8e1;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
         }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .accomplishment ul {
+            list-style: none;
+            padding: 0;
         }
 
-        /* Responsive Design */
+        .accomplishment ul li {
+            margin: 10px 0;
+            color: #cccccc;
+            font-size: 1rem;
+        }
+
+        .accomplishment ul li i {
+            margin-right: 10px;
+            color: #00a8e1;
+        }
+
+        /* Responsive Design for Phones */
         @media (max-width: 768px) {
-            .nav-toggle {
-                display: block;
+            header h1 {
+                font-size: 2rem; /* Smaller header text */
             }
 
-            .nav-menu {
-                display: none;
-                flex-direction: column;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: #1a1a1a;
-                transform: translateX(-100%);
-            }
-
-            .nav-menu.active {
-                display: flex;
-                transform: translateX(0);
-            }
-
-            .nav-menu a {
-                padding: 20px;
-                border-bottom: 1px solid #333;
+            nav a {
+                padding: 10px 15px; /* Smaller padding for nav links */
+                font-size: 0.9rem; /* Smaller font size for nav links */
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.5rem; /* Smaller hero text */
             }
 
-            .hero .typed-text {
-                font-size: 1.2rem;
+            .hero p {
+                font-size: 1.2rem; /* Smaller hero subtitle */
             }
 
             .profile-photo img {
-                width: 120px;
+                width: 120px; /* Smaller profile photo */
                 height: 120px;
             }
-        }
 
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
+            .section h2 {
+                font-size: 1.8rem; /* Smaller section headings */
             }
 
-            .hero .typed-text {
-                font-size: 1rem;
-            }
-
-            .project-card {
-                flex: 0 0 250px;
+            .project-grid {
+                grid-template-columns: 1fr; /* Single column for projects */
             }
 
             .project-card img {
-                height: 150px;
+                height: 150px; /* Smaller project images */
+            }
+
+            .project-card h3 {
+                font-size: 1.3rem; /* Smaller project titles */
+            }
+
+            .project-card p {
+                font-size: 0.9rem; /* Smaller project descriptions */
+            }
+
+            .skill-card h3 {
+                font-size: 1.3rem; /* Smaller skill card titles */
+            }
+
+            .skill-card ul li {
+                font-size: 0.9rem; /* Smaller skill card text */
+            }
+
+            .accomplishment h3 {
+                font-size: 1.3rem; /* Smaller accomplishment titles */
+            }
+
+            .accomplishment ul li {
+                font-size: 0.9rem; /* Smaller accomplishment text */
+            }
+
+            .contact-form input, .contact-form textarea {
+                font-size: 0.9rem; /* Smaller form text */
+            }
+
+            .contact-form button {
+                font-size: 0.9rem; /* Smaller button text */
+            }
+
+            .contact-info p {
+                font-size: 1rem; /* Smaller contact info text */
+            }
+
+            footer p {
+                font-size: 0.9rem; /* Smaller footer text */
             }
         }
     </style>
 </head>
 <body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="spinner"></div>
-    </div>
-
     <header>
-        <h1>Revanth Varma</h1>
+        <h1>Revanth Varma | Data Analyst</h1>
     </header>
     <nav>
-        <button class="nav-toggle" aria-label="Toggle Navigation"><i class="fas fa-bars"></i></button>
-        <div class="nav-menu">
-            <a href="#home">Home</a>
-            <a href="#about">About Me</a>
-            <a href="#skills">Skills & Tools</a>
-            <a href="#projects">Projects</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#internships">Virtual Internships</a>
-            <a href="#experience">Experience</a>
-            <a href="#education">Education</a>
-            <a href="#accomplishments">Accomplishments</a>
-            <a href="#contact">Contact</a>
-        </div>
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#skills">Skills & Tools</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#internships">Virtual Internships</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#accomplishments">Accomplishments</a>
+        <a href="#contact">Contact</a>
     </nav>
     <div class="hero">
+        <video autoplay muted loop>
+            <source src="img/hero-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <div>
-            <h1>Hello, I'm Revanth</h1>
-            <span class="typed-text"></span>
-            <a href="resume/RVDA.pdf" class="btn" download="Revanth_Varma_Resume.pdf">Download Resume</a>
+            <h1>Welcome to My Portfolio</h1>
+            <p>Data Analyst | Predictive Modeling | Data Visualization</p>
         </div>
     </div>
     <div class="container">
+        <!-- Profile Photo Above Home Section -->
         <div class="profile-photo">
-            <img src="img/Profile.jpg" alt="Profile Photo of Revanth Varma" onerror="this.src='img/fallback.jpg';">
+            <img src="img/Profile.jpg" alt="Profile Photo" onerror="this.src='img/fallback.jpg';">
         </div>
         <section id="home" class="section">
             <h2>Home</h2>
             <p>Welcome to my portfolio! I am a data analyst with expertise in predictive modeling, data visualization, and process automation. Explore my work and get in touch with me.</p>
             <div class="social-links">
-                <a href="https://github.com/Revanth-Varma-25" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/revanth-varma-/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Revanth-Varma-25" target="_blank"><i class="fab fa-github animated-icon"></i></a>
+                <a href="https://www.linkedin.com/in/revanth-varma-/" target="_blank"><i class="fab fa-linkedin animated-icon"></i></a>
             </div>
         </section>
         <section id="about" class="section">
@@ -508,317 +546,256 @@
         </section>
         <section id="skills" class="section">
             <h2>Skills & Tools</h2>
-            <div class="skills-grid">
+            <div class="skills-section">
                 <div class="skill-card">
-                    <h3>Data Analysis & Business Intelligence</h3>
+                    <h3><i class="fas fa-chart-line"></i> Data Analysis & Business Intelligence</h3>
                     <ul>
-                        <li>Data Mining, Statistical Analysis, Data Cleaning, Trend Analysis</li>
-                        <li>Business Intelligence (BI) Tools, Data-driven Decision Making</li>
+                        <li><i class="fas fa-database"></i> Data Mining, Statistical Analysis, Data Cleaning, Trend Analysis</li>
+                        <li><i class="fas fa-tools"></i> Business Intelligence (BI) Tools, Data-driven Decision Making</li>
                     </ul>
-                    <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%;"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <h3>Predictive Modeling & Forecasting</h3>
+                    <h3><i class="fas fa-robot"></i> Predictive Modeling & Forecasting</h3>
                     <ul>
-                        <li>Predictive Analytics, Regression Analysis, Time Series Forecasting</li>
-                        <li>Machine Learning, Data Modeling</li>
+                        <li><i class="fas fa-project-diagram"></i> Predictive Analytics, Regression Analysis, Time Series Forecasting</li>
+                        <li><i class="fas fa-code"></i> Machine Learning, Data Modeling</li>
                     </ul>
-                    <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%;"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <h3>Data Visualization & Reporting</h3>
+                    <h3><i class="fas fa-chart-bar"></i> Data Visualization & Reporting</h3>
                     <ul>
-                        <li>Tableau, Power BI, Data Visualization, Dashboard Design</li>
-                        <li>Report Generation, Data Storytelling, Advanced Excel</li>
+                        <li><i class="fas fa-chart-pie"></i> Tableau, Power BI, Data Visualization, Dashboard Design</li>
+                        <li><i class="fas fa-file-alt"></i> Report Generation, Data Storytelling, Advanced Excel</li>
                     </ul>
-                    <div class="progress-bar"><div class="progress" style="width: 88%;"></div></div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 88%;"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <h3>Process Automation & Workflow Optimization</h3>
+                    <h3><i class="fas fa-cogs"></i> Process Automation & Workflow Optimization</h3>
                     <ul>
-                        <li>SQL, Python (Automation Scripts), Power Query, VBA</li>
-                        <li>Process Streamlining, Workflow Automation</li>
+                        <li><i class="fas fa-code"></i> SQL, Python (Automation Scripts), Power Query, VBA</li>
+                        <li><i class="fas fa-stream"></i> Process Streamlining, Workflow Automation</li>
                     </ul>
-                    <div class="progress-bar"><div class="progress" style="width: 92%;"></div></div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 92%;"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <h3>Strategic & Analytical Thinking</h3>
+                    <h3><i class="fas fa-brain"></i> Strategic & Analytical Thinking</h3>
                     <ul>
-                        <li>Critical Thinking, Problem Solving, Root Cause Analysis</li>
-                        <li>Data Interpretation, KPI Development, Business Strategy</li>
+                        <li><i class="fas fa-lightbulb"></i> Critical Thinking, Problem Solving, Root Cause Analysis</li>
+                        <li><i class="fas fa-chart-line"></i> Data Interpretation, KPI Development, Business Strategy</li>
                     </ul>
-                    <div class="progress-bar"><div class="progress" style="width: 87%;"></div></div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 87%;"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <h3>Programming & Analysis Tools</h3>
+                    <h3><i class="fas fa-laptop-code"></i> Programming & Analysis Tools</h3>
                     <ul>
-                        <li>Python (Pandas, NumPy, Scikit-learn), SQL, R, VBA, MATLAB</li>
-                        <li>Jupyter Notebooks</li>
+                        <li><i class="fas fa-code"></i> Python (Pandas, NumPy, Scikit-learn), SQL, R, VBA, MATLAB</li>
+                        <li><i class="fas fa-book"></i> Jupyter Notebooks</li>
                     </ul>
-                    <div class="progress-bar"><div class="progress" style="width: 89%;"></div></div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 89%;"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <h3>Business Intelligence & Visualization</h3>
+                    <h3><i class="fas fa-chart-area"></i> Business Intelligence & Visualization</h3>
                     <ul>
-                        <li>Power BI, Tableau, Excel (Pivot Tables, Charts)</li>
-                        <li>BI Tools, Data Presentation</li>
+                        <li><i class="fas fa-chart-line"></i> Power BI, Tableau, Excel (Pivot Tables, Charts)</li>
+                        <li><i class="fas fa-tools"></i> BI Tools, Data Presentation</li>
                     </ul>
-                    <div class="progress-bar"><div class="progress" style="width: 91%;"></div></div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 91%;"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <h3>Database Management & Analytics</h3>
+                    <h3><i class="fas fa-database"></i> Database Management & Analytics</h3>
                     <ul>
-                        <li>SQL, MySQL, PostgreSQL, NoSQL, Data Warehousing</li>
-                        <li>Data Governance, Snowflake, Alteryx</li>
+                        <li><i class="fas fa-database"></i> SQL, MySQL, PostgreSQL, NoSQL, Data Warehousing</li>
+                        <li><i class="fas fa-shield-alt"></i> Data Governance, Snowflake, Alteryx</li>
                     </ul>
-                    <div class="progress-bar"><div class="progress" style="width: 86%;"></div></div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 86%;"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <h3>Project Management & Collaboration</h3>
+                    <h3><i class="fas fa-project-diagram"></i> Project Management & Collaboration</h3>
                     <ul>
-                        <li>JIRA, Confluence, Microsoft Office, Agile Methodologies</li>
-                        <li>Cross-functional Teamwork, Project Management Tools</li>
+                        <li><i class="fas fa-tasks"></i> JIRA, Confluence, Microsoft Office, Agile Methodologies</li>
+                        <li><i class="fas fa-users"></i> Cross-functional Teamwork, Project Management Tools</li>
                     </ul>
-                    <div class="progress-bar"><div class="progress" style="width: 84%;"></div></div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 84%;"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <h3>Methodologies & Frameworks</h3>
+                    <h3><i class="fas fa-cogs"></i> Methodologies & Frameworks</h3>
                     <ul>
-                        <li>Agile, Scrum, Waterfall, Lean Six Sigma</li>
-                        <li>Continuous Improvement, Change Management</li>
+                        <li><i class="fas fa-project-diagram"></i> Agile, Scrum, Waterfall, Lean Six Sigma</li>
+                        <li><i class="fas fa-sync-alt"></i> Continuous Improvement, Change Management</li>
                     </ul>
-                    <div class="progress-bar"><div class="progress" style="width: 83%;"></div></div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 83%;"></div>
+                    </div>
                 </div>
             </div>
         </section>
         <section id="projects" class="section">
             <h2>Projects</h2>
             <div class="project-grid">
-                <div class="project-card" data-modal="project1">
-                    <img src="img/Walmart vs Target Project 1.jpg" alt="Retail Analytics">
+                <div class="project-card">
+                    <img src="img/Walmart vs Target Project 1.jpg" alt="Data Analytics in Retail Performance">
                     <h3>Data Analytics in Retail Performance</h3>
-                    <p>Analyzed Walmart and Target’s retail performance, focusing on financial metrics and COVID-19’s impact.</p>
-                    <a href="#" onclick="openModal('project1'); return false;">View Case Study</a>
+                    <p>Analyzed Walmart and Target’s retail performance, focusing on financial metrics and COVID-19’s impact on consumer behavior.</p>
                 </div>
-                <div class="project-card" data-modal="project2">
+                <div class="project-card">
                     <img src="img/Project 2.jpg" alt="IRIS Classification">
                     <h3>IRIS Classification</h3>
-                    <p>Implemented a machine learning model to classify iris flowers into three species.</p>
-                    <a href="https://github.com/Revanth-Varma-25/Iris-Classification" target="_blank">View on GitHub</a>
+                    <p>Implemented a machine learning model to classify iris flowers into three species using the Iris dataset.</p>
+                    <a href="https://github.com/Revanth-Varma-25/Iris-Classification" target="_blank">View Project on GitHub</a>
                 </div>
-                <div class="project-card" data-modal="project3">
-                    <img src="img/Amazon Project 3.jpg" alt="Amazon Dashboard">
-                    <h3>Global Super Mart Amazon 2012-2015</h3>
-                    <p>Developed an interactive Power BI dashboard to analyze sales and customer trends.</p>
-                    <a href="https://github.com/Revanth-Varma-25/Global-Super-Mart-Amazon-2012-2015" target="_blank">View on GitHub</a>
+                <div class="project-card">
+                    <img src="img/Amazon Project 3.jpg" alt="Global Super Mart Amazon 2012-2015 (Power BI Dashboard)">
+                    <h3>Global Super Mart Amazon 2012-2015 (Power BI Dashboard)</h3>
+                    <p>Developed an interactive Power BI dashboard to analyze sales performance, customer behavior, and product trends.</p>
+                    <a href="https://github.com/Revanth-Varma-25/Global-Super-Mart-Amazon-2012-2015" target="_blank">View Project on GitHub</a>
                 </div>
             </div>
         </section>
         <section id="certifications" class="section">
             <h2>Certifications</h2>
-            <div class="skill-card">
-                <h3>Google Business Intelligence Certificate</h3>
-                <p><strong>Issued: January 2025</strong> | <a href="https://www.credly.com/badges/0017f9df-6a25-4109-9621-b0cfe2d49634/public_url" target="_blank">View Credential</a></p>
-                <p>Developed and optimized data pipelines using Google Dataflow and Big Query, ensuring efficient ETL processes.</p>
-                <p>Designed interactive dashboards with Google Looker Studio and Tableau for actionable insights.</p>
-            </div>
-            <div class="skill-card">
-                <h3>Google Data Analytics Professional Certificate</h3>
-                <p><strong>Issued: February 2025</strong> | <a href="https://www.credly.com/badges/fcd653da-8a48-4fc6-8972-21065b47d933/public_url" target="_blank">View Credential</a></p>
-                <p>Applied advanced SQL for large-scale data analysis and cleaning, ensuring data accuracy.</p>
-                <p>Created visualizations using Tableau and Google Sheets to translate datasets into business insights.</p>
+            <div class="certifications-section">
+                <div class="certification-card">
+                    <h3><i class="fas fa-certificate"></i> Google Business Intelligence Certificate</h3>
+                    <p><strong>Issued: January 2025</strong></p>
+                    <p>Developed and optimized data pipelines using Google Dataflow and Big Query, ensuring efficient data extraction, transformation, and loading.</p>
+                    <p>Designed and maintained interactive dashboards with Google Looker Studio and Tableau, providing actionable insights for data-driven decision-making.</p>
+                    <a href="https://www.credly.com/badges/0017f9df-6a25-4109-9621-b0cfe2d49634/public_url" target="_blank">View Credential</a>
+                </div>
+                <div class="certification-card">
+                    <h3><i class="fas fa-certificate"></i> Google Data Analytics Professional Certificate</h3>
+                    <p><strong>Issued: February 2025</strong></p>
+                    <p>Applied advanced SQL techniques for large-scale data analysis and data cleaning, ensuring data accuracy and consistency.</p>
+                    <p>Created data visualizations using Tableau and Google Sheets, translating complex datasets into clear business insights.</p>
+                    <a href="https://www.credly.com/badges/fcd653da-8a48-4fc6-8972-21065b47d933/public_url" target="_blank">View Credential</a>
+                </div>
             </div>
         </section>
+        <!-- Virtual Internship Section -->
         <section id="internships" class="section">
             <h2>Virtual Internships</h2>
-            <div class="skill-card">
-                <h3>New York Jobs CEO Council - Financial Analyst</h3>
-                <p><strong>February 2025</strong> | <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9nvkLZzZEKAdrhjrX/TtC5eCKD3FFzH5xcz_9nvkLZzZEKAdrhjrX_wTFus3MoWG2BsXo2J_1740717549619_completion_certificate.pdf" target="_blank">View Certificate</a></p>
-                <ul>
-                    <li>Collected, analyzed, and interpreted financial data to identify trends, opportunities, and risks.</li>
-                    <li>Prepared detailed financial reports, dashboards, and presentations for senior leadership.</li>
-                    <li>Conducted economic research on trends, labor markets, and industry performance in New York.</li>
-                    <li>Assisted in developing strategic initiatives for job growth and economic recovery.</li>
-                    <li>Supported budgeting, forecasting, and variance analysis for programs and initiatives.</li>
-                    <li>Presented findings and recommendations to stakeholders clearly and compellingly.</li>
-                </ul>
-            </div>
-            <div class="skill-card">
-                <h3>Tata Group - Data Visualization</h3>
-                <p><strong>February 2025</strong> | <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/MyXvBcppsW2FkNYCX_ifobHAoMjQs9s6bKS_wTFus3MoWG2BsXo2J_1740709236479_completion_certificate.pdf" target="_blank">View Certificate</a></p>
-                <ul>
-                    <li>Collected, cleaned, and analyzed large datasets to identify trends, patterns, and insights.</li>
-                    <li>Created intuitive dashboards, charts, and reports using Tableau and Power BI.</li>
-                    <li>Developed data-driven narratives to communicate insights to non-technical stakeholders.</li>
-                    <li>Collaborated with cross-functional teams to deliver tailored visualization solutions.</li>
-                    <li>Ensured data integrity and accuracy in all visualizations and reports.</li>
-                    <li>Explored new visualization techniques to enhance data storytelling.</li>
-                </ul>
+            <div class="internship-grid">
+                <div class="internship-card">
+                    <h3><i class="fas fa-briefcase"></i> New York Jobs CEO Council - Financial Analyst Job Simulation</h3>
+                    <p><strong>Date Issued: February 2025</strong></p>
+                    <p><strong>Link:</strong> <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9nvkLZzZEKAdrhjrX/TtC5eCKD3FFzH5xcz_9nvkLZzZEKAdrhjrX_wTFus3MoWG2BsXo2J_1740717549619_completion_certificate.pdf" target="_blank">View Certificate</a></p>
+                    <h4>Key Responsibilities:</h4>
+                    <ul>
+                        <li>Collected, analyzed, and interpreted financial data to identify trends, opportunities, and risks.</li>
+                        <li>Prepared detailed financial reports, dashboards, and presentations for senior leadership and stakeholders.</li>
+                        <li>Conducted economic research on trends, labor markets, and industry performance in New York.</li>
+                        <li>Assisted in developing strategic initiatives for job growth and economic recovery.</li>
+                        <li>Supported budgeting, forecasting, and variance analysis for programs and initiatives.</li>
+                        <li>Presented findings and recommendations to stakeholders in a clear and compelling manner.</li>
+                    </ul>
+                </div>
+                <div class="internship-card">
+                    <h3><i class="fas fa-briefcase"></i> Tata Group - Data Visualization: Empowering Business with Effective Insights Job Simulation</h3>
+                    <p><strong>Date Issued: February 2025</strong></p>
+                    <p><strong>Link:</strong> <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/MyXvBcppsW2FkNYCX_ifobHAoMjQs9s6bKS_wTFus3MoWG2BsXo2J_1740709236479_completion_certificate.pdf" target="_blank">View Certificate</a></p>
+                    <h4>Key Responsibilities:</h4>
+                    <ul>
+                        <li>Collected, cleaned, and analyzed large datasets to identify trends, patterns, and insights.</li>
+                        <li>Created visually appealing and intuitive dashboards, charts, and reports using Tableau and Power BI.</li>
+                        <li>Developed data-driven narratives to communicate insights effectively to non-technical stakeholders.</li>
+                        <li>Collaborated with cross-functional teams to deliver tailored data visualization solutions.</li>
+                        <li>Ensured data integrity and accuracy in all visualizations and reports.</li>
+                        <li>Explored new visualization techniques to enhance the impact of data storytelling.</li>
+                    </ul>
+                </div>
             </div>
         </section>
         <section id="experience" class="section">
             <h2>Professional Experience</h2>
-            <div class="skill-card">
+            <div class="experience">
                 <h3>Graduate Assistant</h3>
-                <p><strong>Lamar University College of Business | Sep 2023 – Dec 2024</strong></p>
+                <p><strong>Lamar University College of Business | Beaumont, USA</strong></p>
+                <p><strong>Sep 2023 – Dec 2024</strong></p>
                 <ul>
                     <li>Assisted faculty in conducting research related to data analytics within business management contexts, driving insights for course improvements.</li>
                     <li>Analyzed department syllabi, providing data-driven recommendations for enhancing curriculum based on industry trends and academic performance.</li>
-                    <li>Supported database management, report generation, and data analysis using SQL, Tableau, and Microsoft Office Suite.</li>
-                    <li>Collaborated with faculty to assess financial health using data visualization and statistical techniques.</li>
+                    <li>Supported database management, report generation, and data analysis using SQL, Tableau, and the Microsoft Office Suite (Word, PowerPoint, Excel) to optimize department operations.</li>
+                    <li>Collaborated with faculty to assess the financial health of business entities, utilizing data visualization and statistical techniques in Microsoft PowerPoint to inform decision-making.</li>
                 </ul>
             </div>
-            <div class="skill-card">
+            <div class="experience">
                 <h3>HR Analyst</h3>
-                <p><strong>Taj Group of Hotels | Oct 2022 – Aug 2023</strong></p>
+                <p><strong>Taj Group of Hotels | Hyderabad, India</strong></p>
+                <p><strong>Oct 2022 – Aug 2023</strong></p>
                 <ul>
-                    <li>Led data analysis and dashboard creation in Tableau and Power BI, streamlining reporting processes.</li>
-                    <li>Automated data workflows using Power Query and SQL, reducing manual tasks by 30%.</li>
+                    <li>Led data analysis and dashboard creation in Tableau and Power BI, streamlining reporting processes and enabling more informed decision-making.</li>
+                    <li>Automated data workflows using Power Query and SQL, resulting in a 30% reduction in manual tasks and improved data accuracy.</li>
                     <li>Applied predictive modeling in Python to forecast trends and support strategic HR planning.</li>
-                    <li>Provided actionable insights through reports for talent management and workforce optimization.</li>
+                    <li>Provided actionable insights through reports that informed talent management, performance tracking, and workforce optimization.</li>
                 </ul>
             </div>
         </section>
         <section id="education" class="section">
             <h2>Education</h2>
-            <div class="skill-card">
+            <div class="education">
                 <h3>Lamar University, Beaumont, TX</h3>
-                <p><strong>Master of Science in Management Information Systems</strong> | GPA: 3.9(A)</p>
+                <p><strong>Master of Science in Management Information Systems</strong></p>
+                <p><strong>GPA: 3.9(A)</strong></p>
             </div>
         </section>
         <section id="accomplishments" class="section">
             <h2>Accomplishments</h2>
-            <div class="skill-card">
-                <h3>Key Achievements</h3>
-                <ul>
-                    <li>Developed regression models and time series forecasts using Python for financial and operational analysis, optimizing inventory management and enhancing profitability.</li>
-                    <li>Designed an interactive Power BI dashboard using the Global Super Mart Amazon 2012-2015 dataset, enabling advanced insights through DAX calculations.</li>
-                    <li>Led the development of interactive dashboards using Tableau and Power BI at Lamar University, improving decision-making and contributing to a 20% increase in efficiency.</li>
-                    <li>Automated complex data workflows using SQL and Power Query, reducing manual reporting tasks by 30%.</li>
-                    <li>Built predictive models and dashboards at Taj Group of Hotels, reducing employee attrition by 15%.</li>
-                    <li>Conducted in-depth analysis of academic syllabi at Lamar University, proposing curriculum improvements aligned with industry standards.</li>
-                    <li>Collaborated with academic, administrative, and HR teams to deliver tailored analytical solutions supporting business growth.</li>
-                    <li>Identified opportunities for Walmart and Target to optimize inventory and e-commerce strategies during COVID-19, resulting in cost savings.</li>
-                    <li>Provided actionable insights into HR processes, enhancing workforce performance at Taj Group of Hotels.</li>
-                    <li>Leveraged data analysis and visualization tools to empower faculty and HR teams with optimized resource allocation strategies.</li>
-                </ul>
+            <div class="accomplishments-section">
+                <div class="accomplishment">
+                    <h3><i class="fas fa-trophy"></i> Key Achievements</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Developed regression models and time series forecasts using Python for financial and operational analysis, optimizing inventory management and enhancing profitability.</li>
+                        <li><i class="fas fa-check"></i> Designed and developed an interactive Power BI dashboard using the Global Super Mart Amazon 2012-2015 dataset to analyze sales performance and customer behavior, enabling advanced insights through DAX calculations.</li>
+                        <li><i class="fas fa-check"></i> Led the development of interactive dashboards using Tableau and Power BI at Lamar University College of Business, improving decision-making and contributing to a 20% increase in operational efficiency.</li>
+                        <li><i class="fas fa-check"></i> Automated complex data workflows using SQL and Power Query, reducing manual reporting tasks by 30% and enabling faster, more accurate data analysis.</li>
+                        <li><i class="fas fa-check"></i> Built predictive models and dashboards at Taj Group of Hotels to forecast staffing needs, track employee engagement, and monitor turnover rates, resulting in a 15% reduction in employee attrition.</li>
+                        <li><i class="fas fa-check"></i> Conducted in-depth analysis of academic syllabi at Lamar University, proposing data-driven curriculum improvements that aligned with industry standards and improved student outcomes.</li>
+                        <li><i class="fas fa-check"></i> Collaborated with academic, administrative, and HR teams to define data requirements and deliver tailored analytical solutions, leading to actionable strategies that supported business growth.</li>
+                        <li><i class="fas fa-check"></i> Identified key opportunities for Walmart and Target to optimize inventory and improve e-commerce strategies, resulting in cost savings and enhanced sales performance during the COVID-19 pandemic.</li>
+                        <li><i class="fas fa-check"></i> Provided actionable insights into HR processes, recommending improvements in talent management and employee satisfaction strategies, enhancing workforce performance at Taj Group of Hotels.</li>
+                        <li><i class="fas fa-check"></i> Leveraged data analysis and visualization tools to empower faculty and HR teams to make informed, data-driven decisions, leading to optimized resource allocation and improved operational strategies.</li>
+                    </ul>
+                </div>
             </div>
         </section>
         <section id="contact" class="section">
             <h2>Contact</h2>
             <div class="contact-info">
-                <p><strong>Email:</strong> <a href="mailto:bhupathivarma97@gmail.com">bhupathivarma97@gmail.com</a></p>
-                <p><strong>Phone:</strong> <a href="tel:+14098678427">+1 4098678427</a></p>
+                <p><strong>Email:</strong> bhupathivarma97@gmail.com</p>
+                <p><strong>Phone:</strong> +1 4098678427</p>
             </div>
-            <form class="contact-form" id="contactForm">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
         </section>
     </div>
+    <!-- Footer -->
     <footer>
-        <p>© 2024 Revanth Varma | <a href="#home">Back to Top</a></p>
+        <p>&copy; 2024 Revanth Varma. All rights reserved. | <a href="#home">Back to Top</a></p>
     </footer>
-
-    <!-- Modals -->
-    <div id="project1" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('project1')">×</span>
-            <h3>Data Analytics in Retail Performance</h3>
-            <p><strong>Problem:</strong> Assess COVID-19 impact on Walmart and Target.</p>
-            <p><strong>Tools:</strong> Python, Tableau, Excel</p>
-            <p><strong>Results:</strong> Optimized inventory, improved profitability.</p>
-        </div>
-    </div>
-    <div id="project2" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('project2')">×</span>
-            <h3>IRIS Classification</h3>
-            <p><strong>Problem:</strong> Classify iris species.</p>
-            <p><strong>Tools:</strong> Python, Scikit-learn</p>
-            <p><strong>Results:</strong> 95% accuracy.</p>
-        </div>
-    </div>
-    <div id="project3" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('project3')">×</span>
-            <h3>Global Super Mart Amazon 2012-2015</h3>
-            <p><strong>Problem:</strong> Analyze Amazon sales and customer trends.</p>
-            <p><strong>Tools:</strong> Power BI, DAX, SQL</p>
-            <p><strong>Results:</strong> Enhanced decision-making with DAX insights.</p>
-        </div>
-    </div>
-
-    <!-- JavaScript -->
-    <script>
-        // Preloader
-        window.addEventListener('load', () => {
-            document.getElementById('preloader').style.opacity = '0';
-            setTimeout(() => document.getElementById('preloader').style.display = 'none', 500);
-        });
-
-        // Typed.js
-        new Typed('.typed-text', {
-            strings: ['Data Analyst', 'Predictive Modeling Expert', 'Visualization Specialist'],
-            typeSpeed: 50,
-            backSpeed: 30,
-            loop: true
-        });
-
-        // Navigation
-        const navToggle = document.querySelector('.nav-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-        navToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
-
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-                navMenu.classList.remove('active');
-            });
-        });
-
-        // Modal
-        function openModal(id) {
-            document.getElementById(id).style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal(id) {
-            document.getElementById(id).style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('click', () => openModal(card.dataset.modal));
-        });
-
-        document.addEventListener('click', e => {
-            if (e.target.classList.contains('modal')) closeModal(e.target.id);
-        });
-
-        // Form Submission
-        document.getElementById('contactForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const formData = new FormData(e.target);
-            try {
-                const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-                    method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
-                });
-                if (response.ok) {
-                    alert('Message sent!');
-                    e.target.reset();
-                } else {
-                    alert('Error sending message.');
-                }
-            } catch {
-                alert('Error sending message.');
-            }
-        });
-    </script>
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top">↑</a>
 </body>
 </html>
